@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Calculator</title>
+    <style>
+        .one {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            font-weight: 110px;
+        }
+
+        .go {
+            text-align: center;font-size: 25px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .joe {
+            background-color: blueviolet;
+        }
+        button{background-color: aqua;font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+        .two{background-color: pink;}
+        .three{background-color: pink;}
+    </style>
+</head>
+
+<body class="joe">
+    <h1 class="one">Check your result here :
+    </h1>
+
+    <form class="go" onsubmit="calculate();return false">
+        <label for="total marks">Total Marks:</label>
+        <input type="text" class="two" min="1" required placeholder="enter your total marks here"
+            id="totalmarks"><br><br>
+        <label for="obtained"> Obtained marks :</label>
+        <input type="text" min="1" required class="three" placeholder="enter your obtained marks here"
+            id="obtainedmarks">
+        <br><br>
+        <button type="submit" class="four" value="calculate">calculate:</button>
+        <h1 class="five" id="percentage"></h1>
+        <h1 class="six" id="Grade"></h1>
+    </form>
+    <script>
+        function calculate() {
+            let totalmarks =
+                +document.querySelector("#totalmarks").value
+            let marksObtained =
+                +document.querySelector("#obtainedmarks").value
+            let percentage =
+                marksObtained / totalmarks * 100;
+            percentage = percentage.toFixed(2)
+            document.querySelector("#percentage").innerHTML = "you have got " + percentage + "%"
+            if
+                (percentage >= 80 && percentage <= 100) {
+                document.querySelector("#Grade").innerHTML = "A1-Grade"
+                console.log("A1-Grade");
+            }
+            else if
+                (percentage >= 70 && percentage < 80) {
+                document.querySelector("#Grade").innerHTML = "A-grade"
+                console.log("A-grade")
+            }
+            else if
+                (percentage >= 60 && percentage < 69) {
+                document.querySelector("#Grade").innerHTML = "B-Grade"
+                console.log("B-Grade")
+            }
+            else if
+                (percentage >= 50 && percentage < 59) {
+                document.querySelector("#Grade").innerHTML = "C-Grade"
+                console.log("C-Grade")
+            }
+            else if
+                (percentage >= 40 && percentage < 49) {
+                document.querySelector("#Grade").innerHTML = "D-Grade"
+                console.log("D-Grade")
+            }
+            else if
+                (percentage >= 35 && percentage < 39) {
+                document.querySelector("#Grade").innerHTML = "E-Grade"
+                console.log("E-Grade")
+            }
+            else if
+                (percentage < 35) {
+                    document.querySelector("#Grade").innerHTML = "F-Grade"
+                console.log("F-Grade")
+            }
+
+            document.querySelector
+
+
+
+
+
+        }
+    </script>
+
+</body>
